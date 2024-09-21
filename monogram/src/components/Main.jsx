@@ -1,6 +1,6 @@
 
 export default function Main() {
-    const productsTop = [
+    const productsTopObj = [
         {
             name: "MINI CONSOLE",
             description: "Ideal for everyday shortcuts. Adaptable to any workflow.",
@@ -48,7 +48,7 @@ export default function Main() {
         }
     ]
 
-    const productsBottom = [
+    const productsBottomObj = [
         {
             name: "MONOGRAM KEYBOARD",
             price: "Sold Out",
@@ -144,9 +144,93 @@ export default function Main() {
         }
     ]
 
+    const productsTop = productsTopObj.map(item => {
+        return (
+            <div className="product">
+                <a href="#">
+                    <div className="product-img">
+                        <img src={item.image} alt={item.name} className="product-img-main"/>
+                        <img src={item.hoverImg} alt={item.name} className="product-img-hover" />
+                        {item.preorder && <div className="preorder-tag">PRE-ORDER</div>}
+                    </div>
+                    <div className="product-description">
+                        <div className="product-description left">
+                            <h3>{item.name}</h3>
+                            <p>{item.description}</p>
+                        </div>
+                        <div className="product-description-right">
+                            <p>{item.price}</p>
+                            {item.available && <div className="shop-now">
+                                <p>SHOP NOW</p>
+                            </div>}
+                        </div>
+                    </div>
+                </a>
+            </div>
+        )
+    })
+
+    const productsBottom = productsBottomObj.map(item => {
+        if ("hoverImg" in item) {
+            return (
+                <div className="product">
+                    <a href="#">
+                        <div className="product-img">
+                            <img src={item.image} alt={item.name} className="product-img-main"/>
+                            <img src={item.hoverImg} alt={item.name} className="product-img-hover" />
+                            {item.preorder && <div className="preorder-tag">PRE-ORDER</div>}
+                        </div>
+                        <div className="product-description">
+                            <div className="product-description left">
+                                <h3>{item.name}</h3>
+                            </div>
+                            <div className="product-description-right">
+                                <p>{item.price}</p>
+                                {item.available && <div className="shop-now">
+                                    <p>SHOP NOW</p>
+                                </div>}
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            )
+        } else if (!("hoverImg" in item)) {
+            return (
+                <div className="product">
+                    <a href="#">
+                        <div className="product-img">
+                            <img src={item.image} alt={item.name} className="product-img-main"/>
+                            {item.preorder && <div className="preorder-tag">PRE-ORDER</div>}
+                        </div>
+                        <div className="product-description">
+                            <div className="product-description left">
+                                <h3>{item.name}</h3>
+                            </div>
+                            <div className="product-description-right">
+                                <p>{item.price}</p>
+                                {item.available && <div className="shop-now">
+                                    <p>SHOP NOW</p>
+                                </div>}
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            )
+        }
+    })
+
     return (
         <main>
-            
+            <section className="products-top-section">
+                {productsTop}
+            </section>
+            <section className="middle-banner-section">
+                <h2>CREATE YPUR OWN CONSOLE</h2>
+                <p>Add-on to make it perfect</p>
+            </section>
+            <section className="products-bottom-section">
+                {productsBottom}
+            </section>
         </main>
     )
 }
