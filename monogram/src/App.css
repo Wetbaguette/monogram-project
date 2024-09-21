@@ -4,14 +4,19 @@
 	box-sizing: border-box;
 }
 
+img,
+svg {
+	width: 100%;
+}
+
 .product {
 	width: 300px;
 }
 
-.product-img img {
-	width: 100%;
-}
-
 .product-img-hover {
 	display: none;
+}
+
+.socialmedia-icon {
+	width: 100px;
 }
