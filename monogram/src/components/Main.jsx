@@ -154,15 +154,15 @@ export default function Main() {
                         {item.preorder && <div className="preorder-tag">PRE-ORDER</div>}
                     </div>
                     <div className="product-description">
-                        <div className="product-description left">
+                        <div className="product-description-top">
                             <h3>{item.name}</h3>
-                            <p>{item.description}</p>
-                        </div>
-                        <div className="product-description-right">
                             <p>{item.price}</p>
                             {item.available && <div className="shop-now">
                                 <p>SHOP NOW</p>
                             </div>}
+                        </div>
+                        <div className="product-description-bottom">
+                            <p>{item.description}</p>
                         </div>
                     </div>
                 </a>
@@ -181,10 +181,8 @@ export default function Main() {
                             {item.preorder && <div className="preorder-tag">PRE-ORDER</div>}
                         </div>
                         <div className="product-description">
-                            <div className="product-description left">
+                            <div className="product-description-top">
                                 <h3>{item.name}</h3>
-                            </div>
-                            <div className="product-description-right">
                                 <p>{item.price}</p>
                                 {item.available && <div className="shop-now">
                                     <p>SHOP NOW</p>
@@ -203,10 +201,8 @@ export default function Main() {
                             {item.preorder && <div className="preorder-tag">PRE-ORDER</div>}
                         </div>
                         <div className="product-description">
-                            <div className="product-description left">
+                            <div className="product-description-top">
                                 <h3>{item.name}</h3>
-                            </div>
-                            <div className="product-description-right">
                                 <p>{item.price}</p>
                                 {item.available && <div className="shop-now">
                                     <p>SHOP NOW</p>
@@ -225,8 +221,10 @@ export default function Main() {
                 {productsTop}
             </section>
             <section className="middle-banner-section">
-                <h2>CREATE YPUR OWN CONSOLE</h2>
-                <p>Add-on to make it perfect</p>
+                <div className="middle-banner-text">
+                    <h2>CREATE YOUR OWN CONSOLE</h2>
+                    <p>Add-on to make it perfect</p>
+                </div>
             </section>
             <section className="products-bottom-section">
                 {productsBottom}

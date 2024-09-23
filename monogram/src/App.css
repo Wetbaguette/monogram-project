@@ -14,11 +14,18 @@ body {
 	font-family: "Prompt", sans-serif;
 }
 
-h1 {
+h1,
+h2 {
 	font-size: 2.5rem;
 	font-weight: 600;
 	line-height: 1.2;
 	letter-spacing: 4px;
+}
+
+h3 {
+	font-size: 1.25rem;
+	letter-spacing: 1.5px;
+	font-weight: 600;
 }
 
 img,
@@ -37,6 +44,12 @@ nav {
 	left: 1%;
 	margin: 0 auto;
 	padding: 0.5rem;
+	z-index: 10;
+}
+
+a {
+	text-decoration: none;
+	color: #1a2456;
 }
 
 .left-side-nav {
@@ -81,8 +94,64 @@ nav {
 	color: white;
 }
 
+main section {
+	margin: 1rem 0;
+}
+
 .product {
-	width: 300px;
+	position: relative;
+	width: 90%;
+	max-width: 500px;
+	margin: 0 auto;
+	margin-bottom: 1.5rem;
+}
+
+.preorder-tag {
+	text-align: center;
+	font-size: 0.8rem;
+	font-weight: 600;
+	letter-spacing: 2px;
+	position: absolute;
+	top: 5%;
+	right: 0;
+	padding: 0.5rem 1rem;
+	background-color: #ff8b68;
+	color: black;
+}
+
+.product-description-top {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.product-description-top p {
+	flex-shrink: 0;
+	color: gray;
+}
+
+.middle-banner-section {
+	background-image: url(https://monogramcc.com/static/fb6b98aa90bbce383e12a09c50936e96/9ee2a/shop-banner-module.webp);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 50vh;
+}
+
+.middle-banner-text {
+	width: 90%;
+	max-width: 350px;
+	margin: 0 auto;
+	text-align: center;
+	padding: 3rem 0;
+	color: #1a2456;
+}
+
+.middle-banner-text p {
+	font-size: 1.25rem;
+	font-weight: 300;
+	margin-top: 1rem;
 }
 
 .product-img-hover {
