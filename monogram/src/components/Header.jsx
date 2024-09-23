@@ -4,6 +4,10 @@ export default function Header() {
 
     const shopIcon = <svg height="25" width="25" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16"><path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"></path></svg>
 
+    const hamburgerMenu = <svg width="30" height="30" aria-hidden="true" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"></path></svg>
+
+    const arrowDown = <svg class="downward-indicator-module--downIcon--1e586 animations-module--slideUp--66da7 animations-module--slideUpStart--f5cb8" width="1.5em" height="1.5em" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path></svg>
+
     const navObj = [
         {
             title: "HOW IT WORKS",
@@ -28,43 +32,37 @@ export default function Header() {
         {
             title: "SHOP",
             link: "#"
-        },
-        {
-            title: "USD",
-            link: "#",
-            icon: shopIcon
         }
     ]
 
-    const backgroundimage = "https://monogramcc.com/static/9a0b554db1990565457610c5f83b3ad7/a464d/shop_cta_xl_896f6b8270.jpg"
-
     const navItems = navObj.map(links => {
-        if (!("icon" in links)) {
-            return (
-                <li>
-                    <a href={links.link}>{links.title}</a>
-                </li>
-            )
-        } else if ("icon" in links) {
-            return (
-                <div className="currency">
-                    {links.icon}
-                    <a href="links.link">{links.title}</a>
-                </div>
-            )
-        }
+        return (
+            <li>
+                <a href={links.link}>{links.title}</a>
+            </li>
+        )
     })
 
     return (
         <header>
-            <nav>
+            <nav className="row">
                 <div className="left-side-nav">
                    {logo}
                 </div>
-                <div className="right-side-nav">
-                    <ul>
+                <div className="right-side-nav row">
+                    <ul className="desktop-nav">
                         {navItems}
                     </ul>
+                    <div className="mobile-nav">
+                        {hamburgerMenu}
+                    </div>
+                    <div className="nav-currency row">
+                        {shopIcon}
+                        <div className="currency">
+                            {/* put currency dropdown */}
+                            <p>USD</p>
+                        </div>
+                    </div>
                 </div>
             </nav>
             <section className="hero-section">
@@ -72,6 +70,7 @@ export default function Header() {
                     <h1>A CONSOLE FOR EVERY WORKFLOW</h1>
                     <p>Discover the perfect console for yours.</p>
                 </div>
+                {arrowDown}
             </section>
         </header>
     )
