@@ -47,9 +47,28 @@ nav {
 	z-index: 10;
 }
 
+footer {
+	background-color: #1a2456;
+	color: #ffbba6;
+	font-size: 0.9rem;
+	font-weight: 300;
+}
+
 a {
 	text-decoration: none;
 	color: #1a2456;
+}
+
+input {
+	background-color: transparent;
+	border: #ffbba6 1px solid;
+	padding: 0.3rem 0.5rem;
+	color: #ffbba6;
+	font-size: 1rem;
+}
+
+li {
+	list-style: none;
 }
 
 .left-side-nav {
@@ -154,12 +173,62 @@ main section {
 	margin-top: 1rem;
 }
 
+.footer {
+	display: flex;
+	flex-direction: column-reverse;
+	width: 90%;
+	margin: 0 auto;
+	padding: 3rem 0;
+}
+
+.footer-left {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 3rem;
+	justify-content: space-between;
+	margin-right: 4rem;
+}
+
+.footer-list-title {
+	font-size: 0.8rem;
+	font-weight: 600;
+	letter-spacing: 1px;
+	margin-bottom: 1rem;
+}
+
+.footer-newsletter-email {
+	margin: 1rem 0;
+}
+
+.footer-newsletter-email button {
+	margin-left: 1rem;
+	padding: 0.3rem 1.5rem;
+	font-family: "Prompt", sans-serif;
+	font-weight: 600;
+	letter-spacing: 1px;
+	background-color: #ffbba6;
+	border: none;
+	color: #1a2456;
+	border-radius: 25px;
+}
+
 .product-img-hover {
 	display: none;
 }
 
+.footer-newsletter-socialmedia {
+	display: flex;
+	gap: 0.5rem;
+	margin-bottom: 3rem;
+}
+
 .socialmedia-icon {
-	width: 100px;
+	display: flex;
+	width: 25px;
+	height: 25px;
+	padding: 0.4rem;
+	background-color: #ffbba6;
+	border-radius: 50px;
 }
 
 .desktop-nav {
