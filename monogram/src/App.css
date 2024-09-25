@@ -47,6 +47,13 @@ nav {
 	z-index: 10;
 }
 
+header {
+	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+		url("https://monogramcc.com/static/9a0b554db1990565457610c5f83b3ad7/a464d/shop_cta_xl_896f6b8270.jpg");
+	background-position: center;
+	height: 400px;
+}
+
 footer {
 	background-color: #1a2456;
 	color: #ffbba6;
@@ -86,18 +93,15 @@ li {
 }
 
 .hero-section {
-	padding: 10rem 1rem;
+	padding: 8rem 0;
 	padding-bottom: 2rem;
 	text-align: center;
 	color: #ffbba6;
-	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-		url("https://monogramcc.com/static/9a0b554db1990565457610c5f83b3ad7/a464d/shop_cta_xl_896f6b8270.jpg");
-	background-position: center;
 }
 
 .hero-text {
 	margin: 0 auto;
-	max-width: 600px;
+	max-width: 400px;
 	text-align: center;
 }
 
@@ -120,7 +124,8 @@ main section {
 .product {
 	position: relative;
 	width: 90%;
-	max-width: 500px;
+	max-width: 560px;
+	min-width: 250px;
 	margin: 0 auto;
 	margin-bottom: 1.5rem;
 }
@@ -151,7 +156,8 @@ main section {
 
 .middle-banner-section {
 	background-image: url(https://monogramcc.com/static/fb6b98aa90bbce383e12a09c50936e96/9ee2a/shop-banner-module.webp);
-	background-size: cover;
+	background-size: contain;
+	background-color: #c4c4c4;
 	background-position: center;
 	background-repeat: no-repeat;
 	width: 100%;
@@ -213,7 +219,18 @@ main section {
 }
 
 .product-img-hover {
-	display: none;
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	object-fit: cover;
+	opacity: 0;
+	transition: opacity 0.2s;
+}
+
+.product-img:hover .product-img-hover {
+	opacity: 1;
 }
 
 .footer-newsletter-socialmedia {
@@ -237,4 +254,67 @@ main section {
 
 .row {
 	display: flex;
+}
+
+@media (min-width: 750px) {
+	header {
+		height: 700px;
+	}
+
+	.hero-section {
+		padding: 20rem 0;
+	}
+
+	.hero-section svg {
+		margin-top: 15rem;
+	}
+
+	.product {
+		width: 100%;
+		margin: 0 auto;
+	}
+	img {
+		object-fit: cover;
+		aspect-ratio: 1/1;
+	}
+
+	.products-top-section .product:last-child {
+		max-width: 100%;
+		grid-column: 1 / span 2;
+	}
+
+	.products-top-section .product:last-child img {
+		object-fit: cover;
+		aspect-ratio: 1/0.5;
+	}
+
+	.products-top-section,
+	.products-bottom-section {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(min-content, max-content));
+		width: 90%;
+		max-width: 1100px;
+		margin: 2rem auto;
+		justify-content: center;
+		gap: 1rem;
+	}
+
+	.products-bottom-section {
+		grid-template-columns: repeat(3, minmax(min-content, max-content));
+		gap: 3rem;
+	}
+	.middle-banner-text {
+		max-width: none;
+	}
+
+	.footer {
+		max-width: 1300px;
+		flex-direction: row;
+		justify-content: space-around;
+		padding-bottom: 8rem;
+	}
+
+	.footer-left {
+		gap: 8rem;
+	}
 }
