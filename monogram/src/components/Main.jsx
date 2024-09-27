@@ -183,10 +183,12 @@ export default function Main() {
                         <div className="product-description">
                             <div className="product-description-top">
                                 <h3>{item.name}</h3>
-                                <p>{item.price}</p>
-                                {item.available && <div className="shop-now">
-                                    <p>SHOP NOW</p>
-                                </div>}
+                                <div className="price-shop">
+                                    <p>{item.price}</p>
+                                    {item.available && <div className="shop-now">
+                                        <p>SHOP NOW</p>
+                                    </div>}
+                                </div>
                             </div>
                         </div>
                     </a>
@@ -203,10 +205,12 @@ export default function Main() {
                         <div className="product-description">
                             <div className="product-description-top">
                                 <h3>{item.name}</h3>
-                                <p>{item.price}</p>
-                                {item.available && <div className="shop-now">
-                                    <p>SHOP NOW</p>
-                                </div>}
+                                <div className="price-shop">
+                                    <p>{item.price}</p>
+                                    {item.available && <div className="shop-now">
+                                        <p>SHOP NOW</p>
+                                    </div>}
+                                </div>
                             </div>
                         </div>
                     </a>

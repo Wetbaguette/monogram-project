@@ -128,6 +128,7 @@ main section {
 	min-width: 250px;
 	margin: 0 auto;
 	margin-bottom: 1.5rem;
+	padding-bottom: 1rem;
 }
 
 .preorder-tag {
@@ -218,6 +219,25 @@ main section {
 	border-radius: 25px;
 }
 
+.shop-now {
+	width: auto;
+	height: auto;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	opacity: 0;
+	transition: opacity 0.2s;
+	padding: 0.5rem 1.5rem;
+	background-color: #1a2456;
+	border-radius: 50px;
+}
+
+.shop-now p {
+	color: white;
+	font-size: 0.9rem;
+	font-weight: 600;
+}
+
 .product-img-hover {
 	position: absolute;
 	top: 0;
@@ -229,7 +249,8 @@ main section {
 	transition: opacity 0.2s;
 }
 
-.product-img:hover .product-img-hover {
+.product:hover .product-img-hover,
+.product:hover .shop-now {
 	opacity: 1;
 }
 
@@ -259,6 +280,10 @@ main section {
 @media (min-width: 750px) {
 	header {
 		height: 700px;
+	}
+
+	main {
+		margin-bottom: 4rem;
 	}
 
 	.hero-section {
