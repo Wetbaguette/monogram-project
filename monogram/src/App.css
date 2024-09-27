@@ -343,3 +343,23 @@ main section {
 		gap: 8rem;
 	}
 }
+
+@media (min-width: 990px) {
+	.mobile-nav {
+		display: none;
+	}
+
+	.desktop-nav {
+		display: flex;
+		z-index: 20;
+		gap: 2rem;
+		margin-right: 1rem;
+	}
+
+	.desktop-nav a {
+		color: #ffbba6;
+		font-weight: 200;
+		letter-spacing: 1px;
+		font-size: 0.9rem;
+	}
+}
