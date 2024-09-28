@@ -16,6 +16,24 @@ export default function Header() {
         {
             title: "WORKFLOWS",
             link: "#",
+            subMenu: [
+                {
+                    title: "AUDIO CONSOLE",
+                    link: "#"
+                },
+                {
+                    title: "PHOTO CONSOLE",
+                    link: "#"
+                }, 
+                {
+                    title: "VIDEO CONSOLE",
+                    link: "#"
+                },
+                {
+                    title: "MINI CONSOLE",
+                    link: "#"
+                }
+            ]
         },
         {
             title: "DOWNLOAD",
@@ -35,7 +53,31 @@ export default function Header() {
         }
     ]
 
+    const subNavItems = navObj.map(links => {
+        if ("subMenu" in links) {
+           const thing = links.subMenu.map(item => {
+                return (
+                    <li className="sub-nav-item">
+                        <a href={item.link}>{item.title}</a>
+                    </li>
+                )
+            })
+             return thing
+        }
+    })
+
     const navItems = navObj.map(links => {
+        if ("subMenu" in links) {
+            return (
+                <ul>
+
+                    <li>
+                        <a href={links.link}>{links.title}</a>
+                    </li>
+                    {subNavItems}    
+                </ul>
+            )
+        }
         return (
             <li>
                 <a href={links.link}>{links.title}</a>
@@ -55,6 +97,12 @@ export default function Header() {
                     </ul>
                     <div className="mobile-nav">
                         {hamburgerMenu}
+                        <div className="mobile-nav-hamburger-section">
+                            {logo}
+                            <ul>
+                                {navItems}
+                            </ul>
+                        </div>
                     </div>
                     <div className="nav-currency row">
                         {shopIcon}

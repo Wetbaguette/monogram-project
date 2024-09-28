@@ -66,6 +66,10 @@ a {
 	color: #1a2456;
 }
 
+header a {
+	color: #ffbba6;
+}
+
 input {
 	background-color: transparent;
 	border: #ffbba6 1px solid;
@@ -115,6 +119,39 @@ li {
 	height: auto;
 	margin-top: 4rem;
 	color: white;
+}
+
+.mobile-nav-hamburger-section {
+	display: none;
+	position: absolute;
+	top: -15%;
+	left: -1%;
+	width: 350px;
+	max-width: 500px;
+	background-color: #1a2456;
+	height: 101vh;
+	padding: 1rem 1rem;
+}
+
+.mobile-nav-hamburger-section svg {
+	width: auto;
+	margin-bottom: 1rem;
+}
+
+.mobile-nav-hamburger-section li {
+	margin-left: 5rem;
+	font-weight: 300;
+	letter-spacing: 1.5px;
+}
+
+.sub-nav-item a {
+	margin-left: 2rem;
+}
+
+.mobile-nav-hamburger-section ul {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
 }
 
 main section {
@@ -341,6 +378,17 @@ main section {
 
 	.footer-left {
 		gap: 8rem;
+	}
+
+	.desktop-nav ul {
+		position: relative;
+	}
+
+	.sub-nav-item {
+		display: none;
+		position: absolute;
+		top: 0;
+		margin-bottom: 1rem;
 	}
 }
 
